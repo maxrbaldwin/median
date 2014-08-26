@@ -1,0 +1,15 @@
+#searchAddress {
+    width: 40%;
+    margin: 0px auto;
+    padding: 20px;
+    background: #fff;
+}
+#top {
+    background: #fff000;
+}
+#middle {
+    background: #ff0000;
+}
+#bottom {
+    background: #0000ff;
+}

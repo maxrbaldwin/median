@@ -1,0 +1,41 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+body {
+    overflow-x: hidden;
+}
+div, form, section, footer {
+    border-radius: .25em;
+}
+.width {
+    width: 100%;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.clear {
+    clear: both;
+}
+#navToggleOpen {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+#skipContainer {
+    position: fixed;
+    right: 0px;
+    top: 50%;
+}
+#sidebar {
+    position: fixed;
+    background: #fff;
+    padding: 10px 20px;
+}
+#footer {
+
+}
