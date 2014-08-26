@@ -6,7 +6,7 @@
 body {
     overflow-x: hidden;
 }
-div, form, section, footer {
+div, form {
     border-radius: .25em;
 }
 .width {
@@ -25,6 +25,7 @@ div, form, section, footer {
     position: fixed;
     top: 10px;
     left: 10px;
+    z-index: 1;
 }
 #skipContainer {
     position: fixed;
@@ -35,7 +36,12 @@ div, form, section, footer {
     position: fixed;
     background: #fff;
     padding: 10px 20px;
+    z-index: 3;
 }
-#footer {
-
+#fadeBack {
+    background: #000;
+    position: fixed;
+    z-index: 2;
+    display: none;
+    opacity: .8;
 }

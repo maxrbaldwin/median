@@ -5,11 +5,22 @@
     background: #fff;
 }
 #top {
-    background: #fff000;
+    background: url("http://upload.wikimedia.org/wikipedia/commons/a/a3/United_States_Capitol_west_front_edit2.jpg");
+    background-size: cover;
 }
 #middle {
     background: #ff0000;
 }
 #bottom {
     background: #0000ff;
+}
+.orb {
+    height: 200px;
+    width: 200px;
+    background: #fff;
+    border-radius: 100%;
+    float: left;
+}
+.section h1 {
+    text-align: center;
 }
