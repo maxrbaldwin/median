@@ -24,3 +24,6 @@
 .section h1 {
     text-align: center;
 }
+.sectionContainer {
+    position: relative;
+}

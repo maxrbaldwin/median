@@ -9,7 +9,7 @@ function resize() {
         topHeight = (windowHeight - parentHeight) / 2;
 
     $('.section').outerWidth(windowWidth).outerHeight(windowHeight);
-    $('.section').css('padding-top', topHeight);
+    $('.sectionContainer').css('top', topHeight);
 
     $('#sidebar').css({
         'left': sidePos,
