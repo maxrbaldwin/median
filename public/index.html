@@ -32,40 +32,8 @@
                 <button id="toggleOpen" class="ui red button toggleButton"></button>
             </div>
         </div>
-        <div id="top" class="section">
-            <div id="topContainer" class="sectionContainer" ng-controller="formController">
-                <h1 ng-bind="searchTitle"></h1>
-                <form id="searchAddress" class="ui form parent" ng-submit="addLookUp()" ng-hide="politicians">
-                    <input type="text" name="address" id="address" class="field" ng-model='address' />
-                    <input type="submit" name="submit" id="submit" class="ui red submit button">
-                </form>
-                <div id="yourReps" ng-show="politicians">
-                    <div class="rep left" ng-repeat="rep in politicians">
-                        <img ng-src="{{rep.photo_url}}">
-                        <h2>{{rep.full_name}}</h2>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-        <div id="middle" class="section">
-            <div id="middleContainer" class="sectionContainer">
+        <div id="viewWrapper" ng-view>
 
-            </div>
-        </div>
-        <div id="bottom" class="section">
-            <div id="bottomContainer" class="sectionContainer">
-                <h1>What is Politcal Accountability Data?</h1>
-                <div class="orb" id="infoOrb1">
-                    sometext
-                </div>
-                <div class="orb" id="infoOrb2">
-                    sometext
-                </div>
-                <div class="orb" id="infoOrb3">
-                    sometext
-                </div>
-            </div>
         </div>
         <footer id="footer">
 

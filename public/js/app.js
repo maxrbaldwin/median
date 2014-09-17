@@ -2,8 +2,8 @@ angular.module('medianSearch', ['ngRoute'])
 
 .config(function($routeProvider) {
     $routeProvider
-        .when('/', {controller: 'formController'})
-        .when('/politician': 'profileController')
+        .when('/', {templateUrl:'/views/home.html', controller: 'formController'})
+        .when('/politician', {templateUrl: '/views/profile.html', controller: 'profileController'})
 })
 
 function formController($scope, $http) {
@@ -43,5 +43,5 @@ function createSearchLayout($scope, data) {
 }
 
 function profileController($scope) {
-
+    $scope.header = 'hello world';
 }
