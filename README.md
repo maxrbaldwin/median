@@ -1,6 +1,6 @@
 #Prototype for The Median
 
-###sDependencies:
+###Dependencies:
 
 ####jQuery
 Version 1.11.0
