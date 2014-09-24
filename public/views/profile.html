@@ -1,1 +1,11 @@
-<h1 ng-bind="header"></h1>
+<div id="profile" class="section">
+<img ng-src="{{profile.photo_url}}">
+<h2 ng-bind="profile.full_name"></h2>
+<p ng-bind="profile.offices[0].address"></p>
+<p ng-bind="profile.office_phone"></p>
+<p ng-bind="profile.district"></p>
+<p ng-bind="profile.chamber"></p>
+<p ng-bind="profile.party"></p>
+<p><a ng-href="{{profile.url}}" target="_blank">Website</a></p>
+
+</div>

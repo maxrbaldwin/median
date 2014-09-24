@@ -40,6 +40,7 @@ app.route('/addLookUp')
                         apikey: key2
                     }
                 }
+                console.log(options);
 
             request(options, function(error, response, repData) {
                 var gotRepData = JSON.parse(repData);
@@ -48,6 +49,26 @@ app.route('/addLookUp')
         });
     });
 
+app.route('/idLookUp')
+    .get(function(req, res) {
+        console.log('working');
+        var id = req.query.id;
+            var method = 'GET',
+            key2 = 'c833fc6b098b4c2d9fbcaf1087f1ff29',
+            url = 'http://openstates.org/api/v1/legislators/' + id,
+            options = {
+                url: url,
+                qs: {
+                    apikey: key2
+                }
+            }
+            console.log(options);
+        request(options, function(err, response, repData) {
+            var gotRepData = JSON.parse(repData);
+            res.send(gotRepData);
+        });
+
+    });
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

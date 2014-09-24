@@ -1,12 +1,41 @@
-angular.module('medianSearch', ['ngRoute'])
+var app = angular.module('medianSearch', ['ngRoute'])
 
 .config(function($routeProvider) {
     $routeProvider
-        .when('/', {templateUrl:'/views/home.html', controller: 'formController'})
-        .when('/politician', {templateUrl: '/views/profile.html', controller: 'profileController'})
+        .when('/', {
+            templateUrl: '/views/home.html',
+            controller: 'formController'
+        })
+        .when('/politician/:polId', {
+            templateUrl: '/views/profile.html',
+            controller: 'profileController'
+        })
 })
 
-function formController($scope, $http) {
+app.factory('getPolitician', function($http) {
+    return {
+        requestAddress: function(add) {
+            return $http({
+                method: 'GET',
+                url: 'http://localhost:3000/addLookUp',
+                params: {
+                    address: add
+                }
+            })
+        },
+        requestId: function(id) {
+            return $http({
+                method: 'GET',
+                url: 'http://localhost:3000/idLookUp',
+                params: {
+                    id: id
+                }
+            });
+        }
+    };
+});
+
+app.controller('formController', function($scope, $http, getPolitician) {
     //Sets the placeholder
     $scope.address = 'Address Placeholder';
     $scope.searchTitle = 'Who Represents You?';
@@ -16,32 +45,21 @@ function formController($scope, $http) {
         //Gets the value of the input form
         var text = this.address;
 
-        console.log(text);
-
-        $http({
-            method: 'GET',
-            url: 'http://localhost:3000/addLookUp',
-            params: {address: text}
-        })
-            .success(function(data, status) {
-                $scope.createLayout = createSearchLayout($scope, data);
-            })
-            .error(function(data, status) {
-
-            });
-
-        //Resets the placeholder text back to original text
-        $scope.address = '';
-
+        //Uses the factory to get the data
+        getPolitician.requestAddress(text).success(function(data) {
+            console.log(data);
+            $scope.politicians = data;
+            $scope.searchTitle = 'These People Represent You';
+        });
     };
-}
+});
 
-function createSearchLayout($scope, data) {
-    console.log(data);
-    $scope.politicians = data;
-    $scope.searchTitle = 'These People Represent You';
-}
-
-function profileController($scope) {
-    $scope.header = 'hello world';
-}
+app.controller('profileController', function($scope, $routeParams, getPolitician) {
+    var id = $routeParams.polId;
+    console.log(id);
+    console.log('ran');
+    getPolitician.requestId(id).success(function(data){
+        console.log(data);
+        $scope.profile = data;
+    });
+});

@@ -3,11 +3,22 @@
     padding: 0px;
     border: 0px;
 }
+body, html {
+    height: 100%;
+}
 body {
     overflow-x: hidden;
+    /*font-family: 'Montserrat', sans-serif;*/
+    font-family: 'Lato', sans-serif;
 }
 div, form {
     border-radius: .25em;
+}
+h1, h2, h3, h4 {
+    margin: 20px 0px;
+    /*font-family: 'Neuton', serif;*/
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
 }
 .width {
     width: 100%;
@@ -44,4 +55,10 @@ div, form {
     z-index: 2;
     display: none;
     opacity: .8;
+}
+.section {
+    height: 100%;
+    min-height: 100%;
+    padding: 50px;
+    width: 100%;
 }
