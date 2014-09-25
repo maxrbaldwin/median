@@ -31,3 +31,8 @@ https://maps.googleapis.com/maps/api/geocode/json
 Legislators search using geolocation. Required the URL parameters of lat and long. A user's address is geoencoded with the Google Maps API and then passed to this API
 http://openstates.org/api/v1/legislators/geo/
 
+####Some Data
+-Labor Stats
+* Unemployment by county (http://www.bls.gov/lau/#cntyaa)
+
+
