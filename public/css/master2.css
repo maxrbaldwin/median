@@ -3,7 +3,7 @@
     padding: 0px;
     border: 0px;
 }
-body, html, #top {
+body, html {
     height: 100%;
 }
 body {
@@ -29,16 +29,28 @@ h1, h2, h3, h4 {
 .clear {
     clear: both;
 }
+#navToggleOpen {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+#sidebar {
+    position: fixed;
+    background: #fff;
+    padding: 10px 20px;
+    z-index: 3;
+}
+#fadeBack {
+    background: #000;
+    position: fixed;
+    z-index: 2;
+    display: none;
+    opacity: .8;
+}
 .section {
     height: 100%;
-    padding: 50px 0px;
+    min-height: 100%;
+    padding: 50px;
     width: 100%;
-}
-#navBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    padding: 1px 20px;
 }

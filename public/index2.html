@@ -9,10 +9,20 @@
     <link rel="stylesheet" type="text/css" href="css/master.css">
     <link rel="stylesheet" type="text/css" href="css/home.css">
 </head>
+
 <body ng-app="medianSearch">
+    <div id="fadeBack"></div>
+    <div id="sidebar">
+        <div id="navToggleClose">
+            <button id="toggleClose" class="ui red button toggleButton"></button>
+        </div>
+        <h1>Nav Bar</h1>
+    </div>
     <div id="wrapper">
         <div id="navBar" class="width">
-            <h1>M</h1>
+            <div id="navToggleOpen" class="toggleCon">
+                <button id="toggleOpen" class="ui red button toggleButton"></button>
+            </div>
         </div>
         <div id="viewWrapper" ng-view>
 

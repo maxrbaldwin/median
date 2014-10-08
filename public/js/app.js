@@ -40,10 +40,19 @@ app.controller('formController', function($scope, $http, getPolitician) {
     $scope.address = 'Address Placeholder';
     $scope.searchTitle = 'Who Represents You?';
 
+    if (localStorage.address) {
+        var returnAddress = localStorage.address;
+        getPolitician.requestAddress(returnAddress).success(function(data){
+            $scope.politicians = data;
+            $scope.searchTitle = 'These People Represent You';
+        });
+    }
+
     //ng-submit function for the address search form
     $scope.addLookUp = function() {
         //Gets the value of the input form
         var text = this.address;
+        localStorage.setItem('address', text);
 
         //Uses the factory to get the data
         getPolitician.requestAddress(text).success(function(data) {
@@ -56,10 +65,8 @@ app.controller('formController', function($scope, $http, getPolitician) {
 
 app.controller('profileController', function($scope, $routeParams, getPolitician) {
     var id = $routeParams.polId;
-    console.log(id);
-    console.log('ran');
     getPolitician.requestId(id).success(function(data){
-        console.log(data);
         $scope.profile = data;
     });
 });
+

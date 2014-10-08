@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var fs = require('fs');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -69,6 +70,23 @@ app.route('/idLookUp')
         });
 
     });
+
+app.route('/labor')
+    .get(function(req, res){
+        console.log('hit');
+        var url = 'http://www.bls.gov/lau/laucntycur14.txt',
+            options = {
+                url: url
+            }
+        request(options, function(err, response, laborData){
+            var laborDataParse = laborData.split("\n");
+            console.log(laborData);
+            for(i = 0; i < laborDataParse.length; i++) {
+            }
+        });
+    });
+
+
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
